@@ -1,120 +1,105 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  l
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>قاعة العروض</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
   body {
-  background-image: url('123/0101.jpg'); /* حدد مسار الصورة هنا */
-  background-size:auto; /* يجعل الصورة تتناسب مع الشاشة دون أن تصبح كبيرة جدًا */
-  background-position:center; /* لضبط الصورة في المنتصف */
-  background-attachment: fixed; /* لجعل الخلفية ثابتة عند التمرير */
-  background-repeat:repeat-x; /* منع تكرار الصورة */
-}
-/* تحسين تصميم الـ h1 */
-h1 {
-    font-size: 4rem; /* تكبير حجم الخط */
-    font-weight: 800; /* زيادة سمك الخط */
-    color: #2d3748; /* لون داكن للنص */
-    text-align: center; /* محاذاة النص إلى المنتصف */
-    letter-spacing: 2px; /* إضافة مسافة بين الأحرف */
-    text-transform: uppercase; /* جعل النص بالحروف الكبيرة */
-    padding: 20px 0; /* إضافة حواف حول النص */
-    position: relative; /* لتطبيق التأثيرات */
+    background-image: url('123/0101.jpg');
+    background-size: auto;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: repeat-x;
   }
 
-  /* تأثير الظل للنص */
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #2d3748;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 20px 0;
+    position: relative;
+  }
+
   h1::before {
-    content: ''; 
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 5px;  /* زيادة سمك الخط السفلي */
-    background-color: #040504; /* لون الأخضر */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #040504;
     border-radius: 5px;
     transform: scaleX(0);
-    transition: transform 0.3s ease-in-out; 
+    transition: transform 0.3s ease-in-out;
   }
 
-  /* تأثير التحويل عند التمرير */
   h1:hover::before {
-    transform: scaleX(1); /* تمدد السطر أسفل النص */
+    transform: scaleX(1);
   }
-/* الأساسيات */
-.moving-title {
-  font-family: 'Arial', sans-serif; /* اختر خطًا عصريًا */
-  font-size: 4rem; /* حجم الخط */
-  color: #333; /* اللون الأساسي */
-  text-align: center; /* محاذاة النص في المنتصف */
-  white-space: nowrap; /* منع التفاف النص */
-  overflow: hidden; /* إخفاء النص الزائد أثناء الكتابة */
-  display: inline-block;
-  animation: typing 4s steps(40) infinite; /* تأثير الكتابة بدون مؤشر */
-}
 
-/* تأثير الكتابة */
-@keyframes typing {
-  0% {
-    width: 0;
+  .moving-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 4rem;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 4s steps(40) infinite;
   }
-  100% {
-    width: 100%;
+
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
   }
-}
-
-
-
-
-
-
   </style>
 </head>
-<body class="bg--50 font-sans">
-  <nav class="flex justify-between items-center p-4 shadow-md" style="background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);">
-    <img src="123/logo.png" alt="شعار القاعة" class="h-20 w-auto"> <!-- شعار -->
-    <h1 class="text-5xl font-bold">قاعة العرض</h1>
-    <div class="space-x-4 rtl:space-x-reverse">
-      <a href="https://wa.me/21692629734" target="_blank" class="hover:text-blue-600">تواصل معنا</a>
+<body class="font-sans">
+
+  <!-- الشريط العلوي -->
+  <nav class="flex flex-col md:flex-row justify-between items-center p-4 shadow-md gap-4 md:gap-0"
+       style="background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);">
+    <img src="123/logo.png" alt="شعار القاعة" class="h-20 w-auto">
+    <h1 class="text-4xl md:text-5xl">قاعة العرض</h1>
+    <div>
+      <a href="https://wa.me/21692629734" target="_blank" class="hover:text-blue-600 text-lg">تواصل معنا</a>
     </div>
   </nav>
 
-
-  <section id="home" class="text-center p-10">
+  <!-- القسم الرئيسي -->
+  <section id="home" class="text-center p-6 md:p-10">
     <div class="wrapper">
-
       <h2 class="moving-title">
         مرحبا بكم في قاعة B &amp; G للعروض الراقية
       </h2>
       
-      <br>
-      <br>
-      <br>
-  
-        <p class="text-3xl font-bold mb-10">اكتشفوا أجمل اللحظات في فضاءنا المميز</p>
-    <p class="text-2xl font-bold mb-8">نقدم لكم أحدث الموديلات العصرية 👌 من الإينوكس, الألمنيوم, الكريستال و الزجاج 🔥✅ </p>
-    <p class="text-2xl font-bold mb-8"> بأسعار معقولة في متناول الجميع 😍 ، </p>
-    <p class="text-2xl font-bold mb-4" >منكم الطلب و منا الجودة و الإتقان 💯✅</p>
+      <br><br><br>
 
+      <p class="text-2xl md:text-3xl font-bold mb-6">اكتشفوا أجمل اللحظات في فضاءنا المميز</p>
+      <p class="text-xl md:text-2xl font-bold mb-4">نقدم لكم أحدث الموديلات العصرية 👌 من الإينوكس, الألمنيوم, الكريستال و الزجاج 🔥✅ </p>
+      <p class="text-xl md:text-2xl font-bold mb-4">بأسعار معقولة في متناول الجميع 😍</p>
+      <p class="text-xl md:text-2xl font-bold mb-6">منكم الطلب و منا الجودة و الإتقان 💯✅</p>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <a href="index_2.html" class="bg-blue-600 text-white px-4 py-2 rounded-xl shadow">شاهد الصور</a>
-  </section>
-
-
-
-
-  
-
-  <section id="gallery" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    <div class="overflow-hidden shadow rounded-lg">
+      <br><br><br>
+      <a href="index_2.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl shadow text-lg mx-auto block w-fit">
+        شاهد الصور
+      </a>
     </div>
   </section>
+
+  <!-- المعرض -->
+  <section id="gallery" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <!-- أضف صورك هنا -->
+  </section>
+
 </body>
 </html>
