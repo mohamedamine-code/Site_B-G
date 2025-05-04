@@ -6,99 +6,104 @@
   <title>قاعة العروض</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-  body {
-    background-image: url('123/0101.jpg');
-    background-size: auto;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: repeat-x;
-  }
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    color: #2d3748;
-    text-align: center;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 20px 0;
-    position: relative;
-  }
-
-  h1::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background-color: #040504;
-    border-radius: 5px;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  h1:hover::before {
-    transform: scaleX(1);
-  }
-
-  .moving-title {
-    font-family: 'Arial', sans-serif;
-    font-size: 4rem;
-    color: #333;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    animation: typing 4s steps(40) infinite;
-  }
-
-  @keyframes typing {
-    0% {
-      width: 0;
+    body {
+      background-image: url('123/0101.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
-    100% {
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #2d3748;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    h1::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
       width: 100%;
+      height: 5px;
+      background-color: #040504;
+      border-radius: 5px;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
     }
-  }
+
+    h1:hover::before {
+      transform: scaleX(1);
+    }
+
+    .moving-title {
+      font-family: 'Arial', sans-serif;
+      font-size: 1.5rem;
+      color: #333;
+      text-align: center;
+      white-space: normal;
+      overflow: visible;
+      animation: none;
+    }
+
+    @media (min-width: 768px) {
+      .moving-title {
+        font-size: 3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        animation: typing 4s steps(40) infinite;
+      }
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body class="font-sans">
 
-  <!-- الشريط العلوي -->
-  <nav class="flex flex-col md:flex-row justify-between items-center p-4 shadow-md gap-4 md:gap-0"
+  <!-- Navigation -->
+  <nav class="flex flex-col md:flex-row justify-between items-center p-4 shadow-md gap-4 md:gap-0 text-center"
        style="background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(8px);">
-    <img src="123/logo.png" alt="شعار القاعة" class="h-20 w-auto">
-    <h1 class="text-4xl md:text-5xl">قاعة العرض</h1>
+    <img src="123/logo.png" alt="شعار القاعة" class="h-16 w-auto md:h-20">
+    <h1 class="text-2xl md:text-4xl">قاعة العرض</h1>
     <div>
       <a href="https://wa.me/21692629734" target="_blank" class="hover:text-blue-600 text-lg">تواصل معنا</a>
     </div>
   </nav>
 
-  <!-- القسم الرئيسي -->
-  <section id="home" class="text-center p-6 md:p-10">
-    <div class="wrapper">
-      <h2 class="moving-title">
-        مرحبا بكم في قاعة B &amp; G للعروض الراقية
-      </h2>
-      
-      <br><br><br>
+  <!-- Main Section -->
+  <section id="home" class="text-center px-4 py-10 md:py-20">
+    <div class="wrapper max-w-4xl mx-auto space-y-6">
+      <h2 class="moving-title">مرحبا بكم في قاعة B &amp; G للعروض الراقية</h2>
 
-      <p class="text-2xl md:text-3xl font-bold mb-6">اكتشفوا أجمل اللحظات في فضاءنا المميز</p>
-      <p class="text-xl md:text-2xl font-bold mb-4">نقدم لكم أحدث الموديلات العصرية 👌 من الإينوكس, الألمنيوم, الكريستال و الزجاج 🔥✅ </p>
-      <p class="text-xl md:text-2xl font-bold mb-4">بأسعار معقولة في متناول الجميع 😍</p>
-      <p class="text-xl md:text-2xl font-bold mb-6">منكم الطلب و منا الجودة و الإتقان 💯✅</p>
+      <p class="text-xl md:text-2xl font-bold">اكتشفوا أجمل اللحظات في فضاءنا المميز</p>
+      <p class="text-lg md:text-xl font-bold">نقدم لكم أحدث الموديلات العصرية 👌 من الإينوكس، الألمنيوم، الكريستال و الزجاج 🔥✅</p>
+      <p class="text-lg md:text-xl font-bold">بأسعار معقولة في متناول الجميع 😍</p>
+      <p class="text-lg md:text-xl font-bold">منكم الطلب و منا الجودة و الإتقان 💯✅</p>
 
-      <br><br><br>
-      <a href="index_2.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl shadow text-lg mx-auto block w-fit">
+      <a href="index_2.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl shadow text-lg mt-6 inline-block">
         شاهد الصور
       </a>
     </div>
   </section>
 
-  <!-- المعرض -->
+  <!-- Gallery (empty placeholder) -->
   <section id="gallery" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
     <!-- أضف صورك هنا -->
+
   </section>
 
 </body>

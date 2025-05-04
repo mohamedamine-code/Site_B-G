@@ -73,102 +73,168 @@
 <br>
 <br>
 
-
 <style>
-.animated-title {
-  animation: pulse 2s infinite;
-}
+  body {
+    background-image: url('123/0101.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    body {
+      background-size: auto;
+    }
   }
-  50% {
-    transform: scale(1.05);
+
+  /* Navbar responsiveness */
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
   }
-}
-  /* السهم الأنيق للرجوع للأعلى */
+  
+  nav h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
+  
+  nav img {
+    height: 60px;
+    margin: 0 auto;
+  }
+  
+  nav div {
+    margin-top: 1rem;
+  }
+
+  /* Index section responsiveness */
+  #index ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .index-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Moving title responsiveness */
+  .moving-title {
+    font-size: 1.5rem;
+    position: relative;
+    left: auto;
+    transform: none;
+    white-space: normal;
+    width: 100%;
+    padding: 0 1rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  /* Video section responsiveness */
+  video {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* Gallery responsiveness */
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  /* Scroll to top button */
   .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            font-size: 1.8rem;
-            background: linear-gradient(135deg, #141411, #FF8C00); /* تدرج لوني أنيق */
-            color: white;
-            border: none;
-            border-radius: 8px; /* زوايا مستديرة ولكن ليست دائرية بالكامل */
-            padding: 15px 30px; /* حجم مناسب للسهم */
-            cursor: pointer;
-            display: none; /* مخفي بشكل افتراضي */
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* تأثير الظل */
-            transition: all 0.3s ease;
-            transform: scale(1); /* تأثير التكبير عند التمرير */
-            animation: floatUpDown 2s ease-in-out infinite; /* حركة السهم للأعلى والأسفل */
-
-        }
-         /* الحركة المتكررة للسهم للأعلى والأسفل */
-         @keyframes floatUpDown {
-            0% {
-                transform: translateY(0); /* البداية في الأسفل */
-            }
-            50% {
-                transform: translateY(-20px); /* حركة لأعلى */
-            }
-            100% {
-                transform: translateY(0); /* العودة للأسفل */
-            }
-        }
-
-
-        /* عندما يظهر السهم */
-        .scroll-to-top.show {
-            display: block;
-        }
-
-        /* تأثير التفاعل مع السهم */
-        .scroll-to-top:hover {
-            background: linear-gradient(135deg, #dc2525, #FFD700); /* تغيير التدرج عند التمرير */
-            transform: scale(1.1); /* تكبير السهم عند التمرير */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* تكبير الظل عند التمرير */
-        }
-
-        .scroll-to-top:active {
-            transform: scale(0.95); /* تصغير السهم عند الضغط */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* استعادة الظل عند الضغط */
-        }
-
-
-
-
-
-  /* Section Styling with Transparent Background */
-  #index {
-    background-color: rgba(250, 247, 247, 0.5);  /* White with slight transparency */
-    padding-top: 40px;
-    padding-bottom: 40px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);  /* Soft shadow */
-    border-radius: 20px;  /* Rounded corners */
-  }
-  #indexx {
-    background-color: rgba(250, 247, 247, 0.2);  /* White with slight transparency */
-    padding-top: 40px;
-    padding-bottom: 40px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);  /* Soft shadow */
-    border-radius: 20px;  /* Rounded corners */
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    bottom: 20px;
+    right: 20px;
   }
 
+  /* Typing animation for smaller screens */
+  @media (max-width: 640px) {
+    .moving-title {
+      animation: none;
+      width: 100%;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
 
-  /* Heading Styling */
+  /* Original animations and styles */
+  .animated-title {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #141411, #FF8C00);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    transform: scale(1);
+    animation: floatUpDown 2s ease-in-out infinite;
+  }
+
+  @keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+
+  .scroll-to-top.show { display: block; }
+  .scroll-to-top:hover {
+    background: linear-gradient(135deg, #dc2525, #FFD700);
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+  .scroll-to-top:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  #index, #indexx {
+    background-color: rgba(250, 247, 247, 0.5);
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 1rem;
+  }
+
   h2 {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #333;  /* Dark text color */
+    color: #333;
     margin-bottom: 20px;
-    letter-spacing: 1px;  /* Slight letter spacing for style */
+    letter-spacing: 1px;
   }
 
-  /* List Styling */
   ul {
     display: flex;
     justify-content: center;
@@ -177,7 +243,6 @@
     list-style: none;
   }
 
-  /* Styling for Links */
   .index-link {
     font-size: 1.1rem;
     font-weight: 500;
@@ -190,15 +255,13 @@
     transition: all 0.3s ease-in-out;
   }
 
-  /* Hover Effect */
   .index-link:hover {
     color: #fff;
-    background-color: #59758d;  /* Green background on hover */
-    box-shadow: 0 8px 24px rgba(0, 6, 0, 0.2);  /* Green shadow */
-    transform: translateY(-5px);  /* Slight lift effect */
+    background-color: #59758d;
+    box-shadow: 0 8px 24px rgba(0, 6, 0, 0.2);
+    transform: translateY(-5px);
   }
 
-  /* Underline Effect */
   .index-link::after {
     content: '';
     position: absolute;
@@ -207,53 +270,40 @@
     width: 0;
     height: 2px;
     background-color: #1a1816;
-    transition: width 0.3s ease;  /* Smooth underline effect */
+    transition: width 0.3s ease;
   }
 
-  .index-link:hover::after {
-    width: 100%;  /* Underline expands on hover */
-  }
-  /* تحسين تصميم الـ h1 */
+  .index-link:hover::after { width: 100%; }
+
   h1 {
-    font-size: 4rem; /* تكبير حجم الخط */
-    font-weight: 800; /* زيادة سمك الخط */
-    color: #2d3748; /* لون داكن للنص */
-    text-align: center; /* محاذاة النص إلى المنتصف */
-    letter-spacing: 2px; /* إضافة مسافة بين الأحرف */
-    text-transform: uppercase; /* جعل النص بالحروف الكبيرة */
-    padding: 20px 0; /* إضافة حواف حول النص */
-    position: relative; /* لتطبيق التأثيرات */
+    font-size: 4rem;
+    font-weight: 800;
+    color: #2d3748;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 20px 0;
+    position: relative;
   }
 
-  /* تأثير الظل للنص */
   h1::before {
-    content: ''; 
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 5px;  /* زيادة سمك الخط السفلي */
-    background-color: #091009; /* لون الأخضر */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #091009;
     border-radius: 5px;
     transform: scaleX(0);
-    transition: transform 0.3s ease-in-out; 
+    transition: transform 0.3s ease-in-out;
   }
 
-  /* تأثير التحويل عند التمرير */
-  h1:hover::before {
-    transform: scaleX(1); /* تمدد السطر أسفل النص */
-  }
+  h1:hover::before { transform: scaleX(1); }
 
-</style>
-
-<style>
   @keyframes soft-bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-6px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
   }
 
   .animate-soft-bounce {
@@ -261,68 +311,43 @@
   }
 
   @keyframes move-down {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    50% {
-      transform: translateY(15px) rotate(15deg);
-      opacity: 0.7;
-    }
-    100% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-    }
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(15px) rotate(15deg); opacity: 0.7; }
+    100% { transform: translateY(0) rotate(0deg); opacity: 1; }
   }
 
   .animate-move-down {
     animation: move-down 1.5s ease-in-out infinite;
   }
 
-  .text-4xl {
-    font-size: 3rem;
-  }
-  /* الأساسيات */
   .moving-title {
-            font-family: 'Arial', sans-serif; /* اختر خطًا عصريًا */
-            font-size: 4rem; /* حجم الخط */
-            color: #333; /* اللون الأساسي */
-            text-align: center; /* محاذاة النص في المنتصف */
-            white-space: nowrap; /* منع التفاف النص */
-            overflow: hidden; /* إخفاء النص الزائد أثناء الكتابة */
-            display: inline-block;
-            animation: typing 4s steps(40) infinite; /* تأثير الكتابة بدون مؤشر */
-            width: 0; /* تبدأ الكتابة من لا شيء */
-            text-align: center; /* محاذاة النص في المنتصف */
-            position: absolute;
-            left: 50%; /* تبدأ الكتابة من المنتصف */
-            transform: translateX(-50%); /* تحريك النص إلى المنتصف تمامًا */
-        }
-
-        /* تأثير الكتابة */
-        @keyframes typing {
-            0% {
-                width: 0;
-            }
-            100% {
-                width: 100%;
-            }
-        }
-
-  /* تأثير الظل على الأسهم */
-  .animate-move-down {
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial', sans-serif;
+    font-size: 4rem;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 4s steps(40) infinite;
+    width: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  /* لتوسيط الأسهم في الصفحة */
+  @keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+
   .flex-center {
     display: flex;
-    justify-content: center; /* توسيط أفقي */
-    align-items: center;     /* توسيط عمودي */
-    height: 10vh;           /* استخدام كامل ارتفاع الصفحة */
-    gap: 1rem;               /* إضافة مسافة بين الأسهم */
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    gap: 1rem;
   }
-  </style>
+</style>
 <br>
 <br>
 <br>
